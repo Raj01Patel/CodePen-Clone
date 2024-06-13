@@ -24,27 +24,32 @@ const ProjectCard = ({ project, index }) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/newProject/${project.id}`);
+    navigate(`/newProject/${project?.id}`);
   };
+
+  if (!project) {
+    return null;
+  }
+
 
   return (
     <div className="project-card" onClick={handleCardClick}>
       <iframe
         title={`Project ${index}`}
-        srcDoc={project.output}
+        srcDoc={project?.output}
         style={{ height: "100%", width: "100%", border: "none" }}
       />
       <div className="user-profile">
         <div className="user-info3">
           {project?.user?.photoURL ? (
-            <img src={user.photoURL} alt="User" className="user-photo" />
+            <img src={user?.photoURL} alt="User" className="user-photo" />
           ) : (
-            <div className="user-initial">{project?.user.email[0]}</div>
+            <div className="user-initial">{project?.user?.email[0]}</div>
           )}
           <div>
             <p style={{ color: "white", fontSize: "17px", fontWeight: "600", textTransform: "capitalize" }}>{project.title}</p>
             <p style={{ color: "white", textTransform: "capitalize" }}>
-              {project?.user?.displayName || project?.user.email.split('@')[0]}
+              {project?.user?.displayName || project?.user?.email?.split('@')[0]}
             </p>
           </div>
         </div>

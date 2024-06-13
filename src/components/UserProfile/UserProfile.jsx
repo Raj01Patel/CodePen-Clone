@@ -31,7 +31,7 @@ const UserProfile = () => {
             <div className={`menu ${menuList ? "" : "block"}`} >
                 {
                     Menus && Menus.map((menu) => (
-                        <Link className='menu-list' to={menu.uri} key={menu.uri}>
+                        <Link className='menu-list' to={menu?.uri} key={menu?.uri}>
                             {menu.name}
                         </Link>
                     ))

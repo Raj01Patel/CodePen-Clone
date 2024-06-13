@@ -58,12 +58,12 @@ const NewProject = () => {
 
             if (docSnap.exists()) {
                 const projectData = docSnap.data();
-                setHtml(projectData.html);
-                setCss(projectData.css);
-                setJs(projectData.js);
-                setTitle(projectData.title);
-                setOutput(projectData.output);
-                setProjectUserId(projectData.user.uid);
+                setHtml(projectData.html || "");
+                setCss(projectData.css || "");
+                setJs(projectData.js || "");
+                setTitle(projectData.title || "Untitled");
+                setOutput(projectData.output || "");
+                setProjectUserId(projectData.user?.uid || null);
                 setProjectExists(true);
             } else {
                 setProjectExists(false);

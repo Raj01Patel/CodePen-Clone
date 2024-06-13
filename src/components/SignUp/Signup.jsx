@@ -6,7 +6,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import { IconButton } from '@mui/material';
 import { singInWithGithub, singInWithGoogle } from '../../utils/helpers';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../config/firebase.config';
+import { auth } from '../../config/firebase.config.js';
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
