@@ -22,7 +22,7 @@ export const singInWithGithub = async () => {
 
 export const Menus = [
     { id: uuidv4(), name: "Projects", uri: "/home/projects" },
-    { id: uuidv4(), name: "Profile", uri: "/home/profile" }
+    { id: uuidv4(), name: "Profile", uri: "/home/profile" },
 ]
 
 export const signOutAction = async () => {

@@ -25,9 +25,7 @@ const Signup = () => {
         if (getEmailValidationStatus) {
             await createUserWithEmailAndPassword(auth, email, password).then((userCred) => {
                 if (userCred) {
-                    toast.success("Create Account Successfully!",{
-                        
-                    });
+                    toast.success("Create Account Successfully!");
                 }
             }).catch(error => {
                 console.log(error)

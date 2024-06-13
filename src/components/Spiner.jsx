@@ -9,8 +9,6 @@ const Spiner = () => {
             width="100"
             color="#526cf1"
             ariaLabel="three-circles-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
         />
     )
 }
