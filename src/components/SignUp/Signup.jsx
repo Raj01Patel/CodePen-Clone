@@ -77,12 +77,12 @@ const Signup = () => {
                         !isLogin ?
                             (
                                 <IconButton onClick={createNewUser} className='signup-login-btn'>
-                                    <button onClick={createNewUser}>Sign Up</button>
+                                    <button>Sign Up</button>
                                 </IconButton>
                             ) :
                             (
-                                <IconButton className='signup-login-btn'>
-                                    <button onClick={loginWithEmailPassword}>Login</button>
+                                <IconButton onClick={loginWithEmailPassword} className='signup-login-btn'>
+                                    <button>Login</button>
                                 </IconButton>
                             )
                     }

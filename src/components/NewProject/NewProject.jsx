@@ -211,16 +211,16 @@ const NewProject = () => {
 
                     <div className='user-info2'>
                         {projectExists && user?.email === projectUserId ? (
-                            <IconButton>
-                                <button className='btn' onClick={editProgram}>Update</button>
+                            <IconButton onClick={editProgram}>
+                                <button className='btn'>Update</button>
                             </IconButton>
                         ) : !projectExists && user ? (
-                            <IconButton>
-                                <button className='btn' onClick={saveProgram}>Save</button>
+                            <IconButton onClick={saveProgram}>
+                                <button className='btn'>Save</button>
                             </IconButton>
                         ) : !user ? (
                             <IconButton>
-                                <button className='btn1' title='SignUp or Login Pls ' disabled>Save</button>
+                                <button className='btn1' title='SignUp or Login Pls '>Save</button>
                             </IconButton>
                         ) : (
                             ""
@@ -240,7 +240,7 @@ const NewProject = () => {
                             )
                         }
 
-                        <IconButton><KeyboardArrowDownIcon onClick={togglemenu} className='option' /></IconButton>
+                        <IconButton onClick={togglemenu}><KeyboardArrowDownIcon  className='option' /></IconButton>
 
                         <div className={`menu ${menuList ? "" : "block"}`} >
                             {
@@ -258,8 +258,8 @@ const NewProject = () => {
                                 )
                             }
                         </div>
-                        <IconButton><ViewModuleIcon onClick={toggleSplitDirection} style={{ color: "white" }} /></IconButton>
-                        <IconButton><SettingsIcon onClick={ThemeList} style={{ color: 'white', margin: "auto 0px", cursor: 'pointer', backgroundColor: "#404040", borderRadius: '5px' }} /></IconButton>
+                        <IconButton onClick={toggleSplitDirection}><ViewModuleIcon style={{ color: "white" }} /></IconButton>
+                        <IconButton onClick={ThemeList}><SettingsIcon style={{ color: 'white', margin: "auto 0px", cursor: 'pointer', backgroundColor: "#404040", borderRadius: '5px' }} /></IconButton>
 
                     </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './UserProfile.css'
-import { Avatar, IconButton } from '@mui/material'
+import {  IconButton } from '@mui/material'
 import { useSelector } from 'react-redux'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Menus, signOutAction } from '../../utils/helpers';
@@ -26,7 +26,7 @@ const UserProfile = () => {
             }
 
 
-            <IconButton><KeyboardArrowDownIcon onClick={togglemenu} className='option' /></IconButton>
+            <IconButton onClick={togglemenu}><KeyboardArrowDownIcon className='option' /></IconButton>
 
             <div className={`menu ${menuList ? "" : "block"}`} >
                 {

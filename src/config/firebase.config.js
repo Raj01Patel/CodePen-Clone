@@ -18,10 +18,3 @@ const db = getFirestore(app);
 
 export { app, db, auth };
 
-
-// apiKey: "AIzaSyDmkJcPr3izSeTJ2DRO1pipOXptSNfat-4",
-//     authDomain: "codepen-47b41.firebaseapp.com",
-//     projectId: "codepen-47b41",
-//     storageBucket: "codepen-47b41.appspot.com",
-//     messagingSenderId:"394823475501",
-//     appId: "1:394823475501:web:ebca131d2d63c4ede733a4"
