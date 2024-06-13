@@ -19,7 +19,6 @@ const App = () => {
     const unsubscribe = auth.onAuthStateChanged(useCred => {
 
       if (useCred) {
-        console.log(useCred?.providerData[0]);
         setDoc(doc(db, "Users", useCred?.uid), useCred?.providerData[0]).
           then(() => {
             dispatch(SET_USER(useCred?.providerData[0]))
