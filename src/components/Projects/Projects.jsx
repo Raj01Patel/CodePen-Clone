@@ -55,7 +55,7 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
     </div>
-  ); 6
+  );
 }
 
 export default Projects;

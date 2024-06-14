@@ -211,20 +211,15 @@ const NewProject = () => {
 
                     <div className='user-info2'>
                         {projectExists && user?.email === projectUserId ? (
-                            <IconButton onClick={editProgram}>
-                                <button className='btn'>Update</button>
-                            </IconButton>
+                            <button onClick={editProgram} className='btn'>Update</button>
                         ) : !projectExists && user ? (
-                            <IconButton onClick={saveProgram}>
-                                <button className='btn'>Save</button>
-                            </IconButton>
+                            <button onClick={saveProgram} className='btn'>Save</button>
                         ) : !user ? (
-                            <IconButton>
-                                <button className='btn1' title='SignUp or Login Pls '>Save</button>
-                            </IconButton>
+                            <button className='btn1' title='SignUp or Login Pls '>Save</button>
                         ) : (
                             ""
                         )}
+
                         <div className={`theme ${themeList ? 'block' : ''}`}>
                             {Object.keys(themes).map((themeName) => (
                                 <p key={themeName} className='theme-list' onClick={() => changeTheme(themeName)}>
@@ -240,7 +235,7 @@ const NewProject = () => {
                             )
                         }
 
-                        <IconButton onClick={togglemenu}><KeyboardArrowDownIcon  className='option' /></IconButton>
+                        <IconButton onClick={togglemenu}><KeyboardArrowDownIcon className='option' /></IconButton>
 
                         <div className={`menu ${menuList ? "" : "block"}`} >
                             {
@@ -254,7 +249,7 @@ const NewProject = () => {
                                 user ? (
                                     <p onClick={signOutAction} className={`sign-out`}>Sign out</p>
                                 ) : (
-                                    <Link to={"/home/auth"} style={{ textDecoration: "none" }}><p onClick={signOutAction} className={`sign-out`}>SignUp</p></Link>
+                                    <Link to={"/home/auth"} style={{ textDecoration: "none" }} onClick={signOutAction} className={`sign-out`}>SignUp</Link>
                                 )
                             }
                         </div>

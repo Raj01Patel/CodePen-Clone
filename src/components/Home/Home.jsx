@@ -40,8 +40,8 @@ const Home = () => {
                         </button>
                     </Link>
                     {user && (
-                        <Link to={"/home/projects"} style={{ textDecoration: "none" }}>
-                            <button className={`home-btn ${isSidebarOpen ? '' : 'hidden'}`}><HomeIcon /> Home</button>
+                        <Link to={"/home/projects"} style={{ textDecoration: "none" }} className={`home-btn ${isSidebarOpen ? '' : 'hidden'}`}>
+                            <HomeIcon /> Home
                         </Link>
                     )}
                 </div>

@@ -3,11 +3,10 @@ import './Signup.css'
 import UserAuthinput from '../UserAuthinput/UserAuthinput'
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
-import { IconButton } from '@mui/material';
 import { singInWithGithub, singInWithGoogle } from '../../utils/helpers';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/firebase.config.js';
-import {toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -74,14 +73,11 @@ const Signup = () => {
                     {
                         !isLogin ?
                             (
-                                <IconButton onClick={createNewUser} className='signup-login-btn'>
-                                    <button>Sign Up</button>
-                                </IconButton>
+                                <button onClick={createNewUser} className='signup-login-btn'>Sign Up</button>
                             ) :
                             (
-                                <IconButton onClick={loginWithEmailPassword} className='signup-login-btn'>
-                                    <button>Login</button>
-                                </IconButton>
+
+                                <button onClick={loginWithEmailPassword} className='signup-login-btn'>Login</button>
                             )
                     }
 

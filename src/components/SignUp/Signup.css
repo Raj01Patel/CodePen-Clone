@@ -1,7 +1,8 @@
 .signup-page {
     color: #fff;
     text-align: center;
-    height: 650px; /* Full viewport height */
+    height: 650px;
+    /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,11 +26,8 @@
     box-sizing: border-box;
 }
 
-.signup-login-btn {
-    width: 100%;
-}
 
-.signup-login-btn button {
+.signup-login-btn {
     width: 100%;
     padding: 10px;
     font-size: 17px;
