@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import './Projects.css';
 import { useNavigate } from 'react-router-dom';
@@ -19,6 +20,10 @@ const Projects = ({ searchText }) => {
   );
 }
 
+Projects.propTypes = {
+  searchText: PropTypes.string.isRequired,
+};
+
 const ProjectCard = ({ project, index }) => {
   const user = useSelector((state) => state.user?.user);
   const navigate = useNavigate();
@@ -30,7 +35,6 @@ const ProjectCard = ({ project, index }) => {
   if (!project) {
     return null;
   }
-
 
   return (
     <div className="project-card" onClick={handleCardClick}>
@@ -57,5 +61,19 @@ const ProjectCard = ({ project, index }) => {
     </div>
   );
 }
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    output: PropTypes.string.isRequired,
+    user: PropTypes.shape({
+      photoURL: PropTypes.string,
+      email: PropTypes.string.isRequired,
+      displayName: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 export default Projects;

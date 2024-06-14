@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './UserAuthinput.css';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { IconButton } from '@mui/material';
 
 const UserAuthinput = ({ label, placeholder, isPass, Icon, setStateFunction, setGetEmailValidationStatus }) => {
-
     const [value, setValue] = useState("");
     const [showPass, setShowPass] = useState(false);
     const [isEmailValid, setIsEmailValid] = useState(false);
@@ -22,9 +22,7 @@ const UserAuthinput = ({ label, placeholder, isPass, Icon, setStateFunction, set
     const handleTextChange = (e) => {
         setValue(e.target.value);
         setStateFunction(e.target.value);
-    }
-
-
+    };
 
     return (
         <div className='user-auth'>
@@ -51,6 +49,15 @@ const UserAuthinput = ({ label, placeholder, isPass, Icon, setStateFunction, set
             </div>
         </div>
     );
-}
+};
+
+UserAuthinput.propTypes = {
+    label: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    isPass: PropTypes.bool.isRequired,
+    Icon: PropTypes.elementType.isRequired,
+    setStateFunction: PropTypes.func.isRequired,
+    setGetEmailValidationStatus: PropTypes.func
+};
 
 export default UserAuthinput;
