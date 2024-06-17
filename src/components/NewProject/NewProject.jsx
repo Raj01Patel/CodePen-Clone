@@ -53,22 +53,32 @@ const NewProject = () => {
 
     useEffect(() => {
         const fetchProject = async () => {
-            const docRef = doc(db, "Projects", id);
-            const docSnap = await getDoc(docRef);
+            try {
+                const docRef = doc(db, "Projects", id);
+                const docSnap = await getDoc(docRef);
 
-            if (docSnap.exists()) {
-                const projectData = docSnap.data();
-                setHtml(projectData.html || "");
-                setCss(projectData.css || "");
-                setJs(projectData.js || "");
-                setTitle(projectData.title || "Untitled");
-                setOutput(projectData.output || "");
-                setProjectUserId(projectData.user?.uid || null);
-                setProjectExists(true);
-            } else {
-                setProjectExists(false);
+                console.log('Document Snapshot:', docSnap);
+
+                if (docSnap.exists()) {
+                    const projectData = docSnap.data();
+                    console.log('Project Data:', projectData);
+
+                    setHtml(projectData.html || "");
+                    setCss(projectData.css || "");
+                    setJs(projectData.js || "");
+                    setTitle(projectData.title || "Untitled");
+                    setOutput(projectData.output || "");
+                    setProjectUserId(projectData.user?.uid || null);
+                    setProjectExists(true);
+                } else {
+                    console.log('No such document!');
+                    setProjectExists(false);
+                }
+            } catch (error) {
+                console.error('Error fetching project:', error);
             }
         };
+
 
         fetchProject();
     }, [id]);
