@@ -278,72 +278,74 @@ const NewProject = () => {
 
                 </header>
 
-                <PanelGroup direction={splitDirection} className='code-container'>
-                    <Panel>
-                        <PanelGroup direction="horizontal">
-                            <Panel>
-                                <div style={{ borderRight: "1px solid grey" }}>
-                                    <div className='pane'>
-                                        <div className='left-side'>
-                                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png' style={{ height: '30px' }} />
-                                            <span>HTML</span>
+                <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+                    <PanelGroup direction={splitDirection} className='code-container'>
+                        <Panel>
+                            <PanelGroup direction="horizontal">
+                                <Panel>
+                                    <div style={{ borderRight: "1px solid grey" }}>
+                                        <div className='pane'>
+                                            <div className='left-side'>
+                                                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png' style={{ height: '30px' }} />
+                                                <span>HTML</span>
+                                            </div>
+                                            <div className='pane1'>
+                                                <SettingsIcon className='setting' onClick={ThemeList} />
+                                                <KeyboardArrowDownIcon />
+                                            </div>
                                         </div>
-                                        <div className='pane1'>
-                                            <SettingsIcon className='setting' onClick={ThemeList} />
-                                            <KeyboardArrowDownIcon />
+                                        <div className='codeMirror'>
+                                            <CodeMirror value={html} height={splitDirection === "vertical" ? "340px" : "100vh"} color='black' theme={themes[theme]} extensions={[javascript({ jsx: true })]} onChange={(value) => { setHtml(value) }} />
                                         </div>
                                     </div>
-                                    <div className='codeMirror'>
-                                        <CodeMirror value={html} height={splitDirection === "vertical" ? "340px" : "100vh"} color='black' theme={themes[theme]} extensions={[javascript({ jsx: true })]} onChange={(value) => { setHtml(value) }} />
-                                    </div>
-                                </div>
-                            </Panel>
-                            <PanelResizeHandle />
-                            <Panel>
-                                <div style={{ borderRight: "1px solid grey" }}>
-                                    <div className='pane'>
-                                        <div className='left-side'>
-                                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png' style={{ height: '30px' }} />
-                                            <span>CSS</span>
-                                        </div>
-                                        <div className='pane1'>
-                                            <SettingsIcon className='setting' onClick={ThemeList} />
-                                            <KeyboardArrowDownIcon />
+                                </Panel>
+                                <PanelResizeHandle />
+                                <Panel>
+                                    <div style={{ borderRight: "1px solid grey" }}>
+                                        <div className='pane'>
+                                            <div className='left-side'>
+                                                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png' style={{ height: '30px' }} />
+                                                <span>CSS</span>
+                                            </div>
+                                            <div className='pane1'>
+                                                <SettingsIcon className='setting' onClick={ThemeList} />
+                                                <KeyboardArrowDownIcon />
 
+                                            </div>
+                                        </div>
+                                        <div className='codeMirror'>
+                                            <CodeMirror value={css} height={splitDirection === "vertical" ? "340px" : "100vh"} color='black' theme={themes[theme]} extensions={[javascript({ jsx: true })]} onChange={(value, viewUpdate) => { setCss(value) }} />
                                         </div>
                                     </div>
-                                    <div className='codeMirror'>
-                                        <CodeMirror value={css} height={splitDirection === "vertical" ? "340px" : "100vh"} color='black' theme={themes[theme]} extensions={[javascript({ jsx: true })]} onChange={(value, viewUpdate) => { setCss(value) }} />
-                                    </div>
-                                </div>
-                            </Panel>
-                            <PanelResizeHandle />
-                            <Panel>
-                                <div style={{ borderRight: "1px solid grey" }}>
-                                    <div className='pane'>
-                                        <div className='left-side'>
-                                            <img src='https://1000logos.net/wp-content/uploads/2020/09/JavaScript-Logo.png' style={{ height: '30px' }} />
-                                            <span>JS</span>
+                                </Panel>
+                                <PanelResizeHandle />
+                                <Panel>
+                                    <div style={{ borderRight: "1px solid grey" }}>
+                                        <div className='pane'>
+                                            <div className='left-side'>
+                                                <img src='https://1000logos.net/wp-content/uploads/2020/09/JavaScript-Logo.png' style={{ height: '30px' }} />
+                                                <span>JS</span>
+                                            </div>
+                                            <div className='pane1'>
+                                                <SettingsIcon className='setting' onClick={ThemeList} />
+                                                <KeyboardArrowDownIcon />
+                                            </div>
                                         </div>
-                                        <div className='pane1'>
-                                            <SettingsIcon className='setting' onClick={ThemeList} />
-                                            <KeyboardArrowDownIcon />
+                                        <div className='codeMirror'>
+                                            <CodeMirror value={js} height={splitDirection === "vertical" ? "340px" : "100vh"} color='black' theme={themes[theme]} extensions={[javascript({ jsx: true })]} onChange={(value, viewUpdate) => { setJs(value) }} />
                                         </div>
                                     </div>
-                                    <div className='codeMirror'>
-                                        <CodeMirror value={js} height={splitDirection === "vertical" ? "340px" : "100vh"} color='black' theme={themes[theme]} extensions={[javascript({ jsx: true })]} onChange={(value, viewUpdate) => { setJs(value) }} />
-                                    </div>
-                                </div>
-                            </Panel>
-                        </PanelGroup>
-                    </Panel>
-                    {splitDirection === "horizontal" && <PanelResizeHandle />}
-                    <Panel>
-                        <div className='bottom-pane'>
-                            <iframe title='Result' srcDoc={output} style={{ border: "none", width: "100%", height: "100%" }} />
-                        </div>
-                    </Panel>
-                </PanelGroup>
+                                </Panel>
+                            </PanelGroup>
+                        </Panel>
+                        {splitDirection === "horizontal" && <PanelResizeHandle />}
+                        <Panel>
+                            <div className='bottom-pane'>
+                                <iframe title='Result' srcDoc={output} style={{ border: "none", width: "100%", height: "100%" }} />
+                            </div>
+                        </Panel>
+                    </PanelGroup>
+                </div>
             </div>
         </>
     );
