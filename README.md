@@ -12,9 +12,8 @@
 3. [Features](#features)
 4. [Technologies Used](#technologies-used)
 5. [Getting Started](#getting-started)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Website UI Explanation](#website-ui-explanation)
+6. [License](#license)
+7. [Website UI Explanation](#website-ui-explanation)
 ---
 
 ## Introduction:
@@ -47,15 +46,6 @@ CodePen is a social development environment. At its heart, it allows you to writ
   3. **Open in a Code Editor:** Open the project folder in your preferred code editor.
   4. **Start the Application:**
   5. The application should now be running locally.
----
-
-## Contributing:
-- We welcome contributions from the community. If you would like to contribute to the project, please follow these steps:
-  1. Fork the repository.
-  2. Create a new branch for your feature or bug fix: `git checkout -b feature-name`.
-  3. Make your changes and commit them: `git commit -m 'Add feature XYZ'`.
-  4. Push to your forked repository: `git push origin feature-name`.
-  5. Create a pull request on the original repository.
 ---
 
 ## License:
